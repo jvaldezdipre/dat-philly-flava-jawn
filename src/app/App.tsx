@@ -169,14 +169,14 @@ export default function App() {
         </AnimatePresence>
       </div>
 
-      {/* Floating accent image (top-right) - starts when video pauses at 5s */}
+      {/* Floating accent image (top-right) - starts when video pauses at 5s, hidden on mobile */}
       <AnimatePresence mode="wait">
         {currentProduct.floatingImage && (
           <motion.img
             key={`float-${currentProduct.name}`}
             src={getImageSrc(currentProduct.floatingImage)}
             alt={`${currentProduct.name} accent`}
-            className="absolute top-[10%] right-[8%] w-[180px] md:w-[220px] object-contain z-15 pointer-events-none drop-shadow-xl"
+            className="absolute top-[10%] right-[8%] w-[180px] md:w-[220px] object-contain z-15 pointer-events-none drop-shadow-xl hidden md:block"
             initial={{ opacity: 0, x: 60, rotate: 15 }}
             animate={
               videoPaused
@@ -194,14 +194,14 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Floating accent image 2 (bottom-center-right) - starts when video pauses at 5s */}
+      {/* Floating accent image 2 (bottom-center-right) - starts when video pauses at 5s, hidden on mobile */}
       <AnimatePresence mode="wait">
         {currentProduct.floatingImage2 && (
           <motion.img
             key={`float2-${currentProduct.name}`}
             src={getImageSrc(currentProduct.floatingImage2)}
             alt={`${currentProduct.name} accent 2`}
-            className="absolute bottom-[6%] left-[55%] w-[160px] md:w-[200px] object-contain z-15 pointer-events-none drop-shadow-xl"
+            className="absolute bottom-[6%] left-[55%] w-[160px] md:w-[200px] object-contain z-15 pointer-events-none drop-shadow-xl hidden md:block"
             initial={{ opacity: 0, y: 50, rotate: -10 }}
             animate={
               videoPaused
@@ -218,14 +218,14 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Floating accent image 3 (top-left) - starts when video pauses at 5s */}
+      {/* Floating accent image 3 (top-left) - starts when video pauses at 5s, hidden on mobile */}
       <AnimatePresence mode="wait">
         {currentProduct.floatingImage3 && (
           <motion.img
             key={`float3-${currentProduct.name}`}
             src={getImageSrc(currentProduct.floatingImage3)}
             alt={`${currentProduct.name} accent 3`}
-            className="absolute top-[10%] left-[4%] w-[150px] md:w-[190px] object-contain z-15 pointer-events-none drop-shadow-xl"
+            className="absolute top-[10%] left-[4%] w-[150px] md:w-[190px] object-contain z-15 pointer-events-none drop-shadow-xl hidden md:block"
             initial={{ opacity: 0, y: -50, rotate: 10 }}
             animate={
               videoPaused
